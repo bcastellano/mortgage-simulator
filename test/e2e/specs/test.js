@@ -14,7 +14,6 @@ module.exports = {
       .waitForElementVisible('#app', 5000)
       .assert.elementPresent('.hello')
       .assert.containsText('h1', 'Simulador de hipotecas')
-      .assert.elementCount('img', 1)
       .end()
   }
 }
