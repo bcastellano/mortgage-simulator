@@ -1,18 +1,39 @@
 <template>
   <div>
     <div class="box">
-      <h3 class="title is-4">Resultados iniciales:</h3>
-      <p>Interés mensual: <b>{{result.initial.monthlyRate}}</b></p>
-      <p>Cuota: <b>{{result.initial.monthlyFee}}</b></p>
-      <p>Numero de Cuotas: <b>{{result.initial.totalFees}}</b></p>
-      <p>Total a pagar: <b>{{result.initial.totalAmount}}</b></p>
-      <p>Intereses: <b>{{result.initial.interestAmount}}</b></p>
-    </div>
-    <div class="box">
-      <h3 class="title is-4">Resultados finales:</h3>
-      <p>Numero de Cuotas: <b>{{result.final.totalFees}}</b></p>
-      <p>Total a pagar: <b>{{result.final.totalAmount}}</b></p>
-      <p>Intereses: <b>{{result.final.interestAmount}}</b></p>
+      <h3 class="title is-4">Resultados:</h3>
+      <p>Interés mensual: <b>{{result.initial.monthlyRate.toFixed(6)}}</b></p>
+      <p>Cuota inicial: <b>{{result.initial.monthlyFee.toFixed(2)}}</b></p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>R.inicial</th>
+            <th>R.final</th>
+            <th>diff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Numero de Cuotas:</th>
+            <td>{{result.initial.totalFees}}</td>
+            <td>{{result.final.totalFees}}</td>
+            <td>{{result.initial.totalFees - result.final.totalFees}}</td>
+          </tr>
+          <tr>
+            <th>Total a pagar:</th>
+            <td>{{result.initial.totalAmount.toFixed(2)}}</td>
+            <td>{{result.final.totalAmount.toFixed(2)}}</td>
+            <td>{{(result.initial.totalAmount - result.final.totalAmount).toFixed(2)}}</td>
+          </tr>
+          <tr>
+            <th>Intereses:</th>
+            <td>{{result.initial.interestAmount.toFixed(2)}}</td>
+            <td>{{result.final.interestAmount.toFixed(2)}}</td>
+            <td>{{(result.initial.interestAmount - result.final.interestAmount).toFixed(2)}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
