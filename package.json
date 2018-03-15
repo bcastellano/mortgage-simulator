@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mortgage simulator web app",
   "author": "Blas Castellano Moreno <b.castellano.moreno@gmail.com>",
+  "homepage": "https://bcastellano.github.io/mortgage-simulator/",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
