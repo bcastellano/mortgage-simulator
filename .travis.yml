@@ -1,10 +1,14 @@
-language: node_js
+sudo: required
+dist: trusty
+language: java
 addons:
   apt:
     sources:
       - google-chrome
     packages:
       - google-chrome-stable
+jdk:
+  - oraclejdk8
 node_js:
   - "stable"
   - "8"
