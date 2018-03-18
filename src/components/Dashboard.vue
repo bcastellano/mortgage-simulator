@@ -1,7 +1,7 @@
 <template>
   <div class="container is-fluid">
     <div class="columns">
-      <div class="column">
+      <div class="column is-two-thirds">
         <mortgage-form :m-data="mortgageData"></mortgage-form>
       </div>
       <div class="column">
