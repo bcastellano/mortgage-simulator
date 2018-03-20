@@ -26,24 +26,13 @@ import MortgageAmortizationTable from './MortgageAmortizationTable.vue'
 
 // Initial model
 var mortgageData = {
-  capital: 150000,
-  installments: 30,
-  mortgageType: 2,
+  capital: 0,
+  installments: 0,
+  mortgageType: 0,
   differential: 0,
   euribor: 0,
-  fixedRate: 2.50,
-  partialAmortization: [
-    {
-      fee: 10,
-      amount: 10000,
-      type: '2'
-    },
-    {
-      fee: 16,
-      amount: 5000,
-      type: '2'
-    }
-  ]
+  fixedRate: 0,
+  partialAmortization: []
 }
 
 // result data
