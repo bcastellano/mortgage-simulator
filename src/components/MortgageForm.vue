@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div id="form" class="box">
     <h3 class="title is-4">Form</h3>
     <section>
         <div class="columns">
@@ -9,7 +9,8 @@
                     icon="cash-multiple"
                     v-model.number="mData.capital"
                     required
-                    type="number">
+                    type="number"
+                    id="capital">
                 </b-input>
             </b-field>
             <b-field label="Plazos">
@@ -17,13 +18,15 @@
                     icon="calendar-range"
                     v-model.number="mData.installments"
                     required
-                    type="number">
+                    type="number"
+                    id="installments">
                 </b-input>
             </b-field>
           </div>
           <div class="column">
             <b-field label="Tipo">
-                <b-select v-model="mData.mortgageType">
+                <b-select v-model="mData.mortgageType"
+                    id="mortgageType">
                   <option disabled value="">Selecciona tipo de hipoteca</option>
                   <option value="1">Variable</option>
                   <option value="2">Fijo</option>
@@ -34,14 +37,16 @@
                 <b-input placeholder="Introduce el diferencial aplicado"
                     icon="percent"
                     v-model.number="mData.differential"
-                    required>
+                    required
+                    id="differential">
                 </b-input>
               </b-field>
               <b-field label="Euribor">
                 <b-input placeholder="Introduce el euribor aplicado"
                     icon="percent"
                     v-model.number="mData.euribor"
-                    required>
+                    required
+                    id="euribor">
                 </b-input>
               </b-field>
             </div>
@@ -50,29 +55,33 @@
                 <b-input placeholder="Introduce el tipo de interés"
                     icon="percent"
                     v-model.number="mData.fixedRate"
-                    required>
+                    required
+                    id="fixedRate">
                 </b-input>
               </b-field>
             </div>
           </div>
           <div class="column">
-            <button v-on:click="addPartialAmortization()">add</button>
+            <button v-on:click="addPartialAmortization()" id="partialAmortizationAdd">add</button>
             <b-field>
               <b-input placeholder="fee"
                   v-model.number="fee"
-                  required>
+                  required
+                  id="partialAmortizationFee">
               </b-input>
             </b-field>
             <b-field>
               <b-input placeholder="amount"
                   v-model.number="amount"
-                  required>
+                  required
+                  id="partialAmortizationAmount">
               </b-input>
             </b-field>
             <b-field>
               <b-input placeholder="type"
                   v-model="type"
-                  required>
+                  required
+                  id="partialAmortizationType">
               </b-input>
             </b-field>
             <b-table

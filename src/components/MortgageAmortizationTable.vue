@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="amortization-table">
     <h3 class="title is-4">Cuadro de amortización:</h3>
 
     <b-table

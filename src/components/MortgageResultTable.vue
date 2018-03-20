@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="result-table">
     <div class="box">
       <h3 class="title is-4">Resultados:</h3>
       <p>Interés mensual: <b>{{result.initial.monthlyRate.toFixed(6)}}</b></p>
@@ -24,13 +24,13 @@
             <th>Total a pagar:</th>
             <td>{{result.initial.totalAmount.toFixed(2)}}</td>
             <td>{{result.final.totalAmount.toFixed(2)}}</td>
-            <td>{{(result.initial.totalAmount - result.final.totalAmount).toFixed(2)}}</td>
+            <td>{{Math.abs(result.initial.totalAmount - result.final.totalAmount).toFixed(2)}}</td>
           </tr>
           <tr>
             <th>Intereses:</th>
             <td>{{result.initial.interestAmount.toFixed(2)}}</td>
             <td>{{result.final.interestAmount.toFixed(2)}}</td>
-            <td>{{(result.initial.interestAmount - result.final.interestAmount).toFixed(2)}}</td>
+            <td>{{Math.abs(result.initial.interestAmount - result.final.interestAmount).toFixed(2)}}</td>
           </tr>
         </tbody>
       </table>
