@@ -209,5 +209,17 @@ module.exports = {
       .assert.containsText('#amortization-table table tr:nth-child(480) td:nth-child(9)', '')
 
       .end()
+  },
+
+  'Load & save mortgage data from/to local storage': function (browser) {
+    browser
+      .url(browser.globals.devServerURL)
+      .waitForElementVisible('#app', 5000)
+      .assert.value('input#capital', '0')
+      .setValue('input#capital', '100000')
+      .refresh()
+      .waitForElementVisible('#app', 5000)
+      .assert.value('input#capital', '100000')
+      .end()
   }
 }

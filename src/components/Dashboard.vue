@@ -25,7 +25,7 @@ import MortgageAmortizationTable from './MortgageAmortizationTable.vue'
  */
 
 // Initial model
-var mortgageData = {
+var mortgageData = localStorage.mortgageData ? JSON.parse(localStorage.mortgageData) : {
   capital: 0,
   installments: 0,
   mortgageType: 0,
@@ -63,6 +63,8 @@ export default {
       handler: function (newMortgageData, oldMortgageData) {
         this.calculateInterest()
         this.calculateTable()
+
+        localStorage.mortgageData = JSON.stringify(newMortgageData)
       },
       deep: true
     }
