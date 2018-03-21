@@ -18,6 +18,7 @@
 import MortgageForm from './MortgageForm.vue'
 import MortgageResultTable from './MortgageResultTable.vue'
 import MortgageAmortizationTable from './MortgageAmortizationTable.vue'
+import Mortgage from '../lib/mortgage'
 
 /*
  mortgage type: 1 - Variable; 2 - Fijo
@@ -25,15 +26,7 @@ import MortgageAmortizationTable from './MortgageAmortizationTable.vue'
  */
 
 // Initial model
-var mortgageData = localStorage.mortgageData ? JSON.parse(localStorage.mortgageData) : {
-  capital: 0,
-  installments: 0,
-  mortgageType: 0,
-  differential: 0,
-  euribor: 0,
-  fixedRate: 0,
-  partialAmortization: []
-}
+var mortgageData = Mortgage.get()
 
 // result data
 var result = {
@@ -64,7 +57,7 @@ export default {
         this.calculateInterest()
         this.calculateTable()
 
-        localStorage.mortgageData = JSON.stringify(newMortgageData)
+        Mortgage.save()
       },
       deep: true
     }
