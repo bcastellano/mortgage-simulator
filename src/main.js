@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
+import './assets/favicons/favicons'
 
 Vue.use(Buefy)
 
