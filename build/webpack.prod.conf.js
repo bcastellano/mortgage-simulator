@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -119,7 +120,21 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    // manifest
+    new WebpackPwaManifest({
+      name: 'Mortgage Simulator',
+      short_name: 'Mortgage Simulator',
+      description: 'Mortgage Simulator',
+      background_color: '#ffffff',
+      icons: [
+        {
+          src: path.resolve('src/assets/icon512.png'),
+          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        }
+      ]
+    })
   ]
 })
 
