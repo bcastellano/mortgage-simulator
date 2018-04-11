@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "buefy": "^0.6.3",
+    "serviceworker-webpack-plugin": "^0.2.3",
     "vue": "^2.5.15",
     "vue-router": "^3.0.1"
   },
