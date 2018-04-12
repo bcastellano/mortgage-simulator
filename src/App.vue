@@ -23,6 +23,11 @@
                 <a>documentation</a>
               </router-link>
             </ul>
+
+            <div class="tags has-addons is-pulled-right">
+              <span class="tag is-dark">version</span>
+              <span class="tag is-info">v{{ version }}</span>
+            </div>
           </nav>
         </div>
       </div>
@@ -36,7 +41,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      version: window.app_version
+    }
+  }
 }
 </script>
 
