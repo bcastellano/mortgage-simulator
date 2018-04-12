@@ -1,5 +1,10 @@
 # Mortgage simulator web app
-Calcula como quedarán los intereses y cuadro de amortización de tu hipoteca
+[![Build Status](https://travis-ci.org/bcastellano/mortgage-simulator.svg?branch=master)](https://travis-ci.org/bcastellano/mortgage-simulator)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+
+
+## Introducción
+Calcula como quedarán los intereses y cuadro de amortización de tu hipoteca. Introduce los datos de tu hipoteca y cálcula gastos totales con intereses y amortizaciones parciales.
 
 ## Build Setup
 
