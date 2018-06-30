@@ -1,0 +1,41 @@
+{
+  "icons": [
+    {
+      "src": "/mortgage-simulator/icon_512x512.778e7c7daa165a7e586f4c6ef78ad812.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/mortgage-simulator/icon_384x384.a632a2ddc70bb5f0c8c288873f754ac3.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/mortgage-simulator/icon_256x256.3b9fc58a3272a0870c66c766f4a4764a.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/mortgage-simulator/icon_192x192.73cb525dd1cac9148bb4898b30fbe8e1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/mortgage-simulator/icon_128x128.3a7c8d2187a52c1883a2b574b4c787be.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/mortgage-simulator/icon_96x96.e3f0407e5de81fc711a99d3e44f6d279.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Mortgage Simulator",
+  "short_name": "Mortgage Simulator",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Mortgage Simulator",
+  "background_color": "#ffffff"
+}
