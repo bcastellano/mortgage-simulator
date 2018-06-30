@@ -12,6 +12,11 @@
         <b-table-column field="index" label="index" numeric>
           {{ props.row.index }}
         </b-table-column>
+        <b-table-column field="date" label="Fecha" numeric>
+          <span :class="'tag ' + getClass(props.row.date)">
+            {{ props.row.date }}
+          </span>
+        </b-table-column>
         <b-table-column field="year" label="Año" numeric>
           {{ props.row.year }}
         </b-table-column>
@@ -61,6 +66,16 @@ export default {
     tableData: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    getClass (date) {
+      let objDate = new Date(date)
+      if (objDate < Date.now()) {
+        return 'is-success'
+      } else {
+        return 'is-danger'
+      }
     }
   }
 }

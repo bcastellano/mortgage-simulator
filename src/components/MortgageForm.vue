@@ -22,6 +22,15 @@
                     id="installments">
                 </b-input>
             </b-field>
+            <b-field label="Fecha inicio">
+                <b-datepicker
+                    id="startDate"
+                    v-model="mData.startDate"
+                    required
+                    placeholder="Introduzce fecha de primer pago"
+                    icon="calendar-today">
+                </b-datepicker>
+            </b-field>
           </div>
           <div class="column">
             <b-field label="Tipo">

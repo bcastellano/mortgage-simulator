@@ -31,6 +31,12 @@ function NPER (rate, pmt, pv, fv) {
   return Math.log((-fv * rate + pmt) / (pmt + rate * pv)) / Math.log(1 + rate)
 }
 
+function formatDate (date) {
+  let month = (date.getMonth() + 1)
+  month = (month < 10 ? '0' + month : '' + month)
+  return `${date.getFullYear()}-${month}-${date.getDate()}`
+}
+
 function calculate (mortgageData) {
   let monthlyRate = (mortgageData.mortgageType === '1' ? (mortgageData.differential + mortgageData.euribor) / (12 * 100) : mortgageData.fixedRate / (12 * 100))
   let totalFees = mortgageData.installments * 12
@@ -48,10 +54,13 @@ function calculate (mortgageData) {
     partialAmortization[it.fee] = it
   }
   let month = 1
+  let itemDate = new Date(mortgageData.startDate)
   for (let index = 0; index < totalFees; index++) {
     const item = {}
+    itemDate.setMonth(itemDate.getMonth() + 1)
 
     item.index = index
+    item.date = formatDate(itemDate)
     item.month = month
     item.partialAmortizationAmount = 0
     if (partialAmortization[item.month]) {
@@ -89,6 +98,10 @@ function calculate (mortgageData) {
     month++
   }
 
+  let startDate = new Date(mortgageData.startDate)
+  let endDate = new Date(mortgageData.startDate)
+  endDate.setMonth(endDate.getMonth() + tableData.length)
+
   return {
     result: {
       initial: {
@@ -96,12 +109,14 @@ function calculate (mortgageData) {
         monthlyFee: monthlyFee,
         totalFees: totalFees,
         totalAmount: totalAmount,
-        interestAmount: interestAmount
+        interestAmount: interestAmount,
+        startDate: formatDate(startDate)
       },
       final: {
         totalFees: tableData.length,
         totalAmount: finalTotalAmount,
-        interestAmount: finalInterestAmount
+        interestAmount: finalInterestAmount,
+        endDate: formatDate(endDate)
       }
     },
     table: tableData

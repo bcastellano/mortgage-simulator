@@ -4,6 +4,8 @@
       <h3 class="title is-4">Resultados:</h3>
       <p>Interés mensual: <b>{{resultInitial.monthlyRate.toFixed(6)}}</b></p>
       <p>Cuota inicial: <b>{{resultInitial.monthlyFee.toFixed(2)}}</b></p>
+      <p>Fecha inicio: <b>{{resultInitial.startDate}}</b></p>
+      <p>Fecha fin: <b>{{resultFinal.endDate}}</b></p>
       <table class="table">
         <thead>
           <tr>

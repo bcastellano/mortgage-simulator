@@ -6,12 +6,14 @@ let mortgageData = {
   differential: 0,
   euribor: 0,
   fixedRate: 0,
-  partialAmortization: []
+  partialAmortization: [],
+  startDate: null
 }
 
 try {
   if (localStorage.mortgageData) {
     mortgageData = JSON.parse(localStorage.mortgageData)
+    mortgageData.startDate = new Date(mortgageData.startDate)
   }
 } catch (error) {
   console.error('Data in localstorage corrupted')
